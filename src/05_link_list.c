@@ -6,11 +6,24 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:44:21 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/09 16:45:08 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/10 00:13:06 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int		lst_size(t_stack *stack)
+{
+	int		len;
+
+	len = 0;
+	while (stack != NULL)
+	{
+		stack = stack->next;
+		len++;
+	}
+	return (len);
+}
 
 void	lstadd_back(t_stack **lst, t_stack *new)
 {
