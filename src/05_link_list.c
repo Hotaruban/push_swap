@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:44:21 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/10 00:13:06 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/10 18:22:09 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ t_stack	*lstnew(int num)
 	if (new_node != NULL)
 	{
 		new_node->num = num;
+		new_node->ind = 0;
 		new_node->next = NULL;
 	}
 	return (new_node);

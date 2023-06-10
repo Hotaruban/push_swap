@@ -6,7 +6,7 @@
 #    By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/28 01:00:03 by jhurpy            #+#    #+#              #
-#    Updated: 2023/06/10 01:39:02 by jhurpy           ###   ########.fr        #
+#    Updated: 2023/06/11 02:41:03 by jhurpy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,8 @@ SRC_FILES =	00_main.c \
 			04_free.c \
 			05_link_list.c \
 			06_actions.c \
+			07_sort_small.c \
+			08_set_index.c \
 
 OBJ_DIR = obj
 INC_DIR = includes

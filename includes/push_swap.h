@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 01:02:09 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/10 01:41:17 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/11 02:56:12 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,12 @@ t_stack	*creat_stack(char **tab);
 void	lstadd_back(t_stack **lst, t_stack *new);
 t_stack	*lstnew(int num);
 int		lst_size(t_stack *stack);
+void	set_index(t_stack *stack, int len);
+
+/*
+Function will sort the list
+*/
+void	sort_small(t_stack *stack_a, t_stack *stack_b, int len);
 
 /*
 Functions/actions for swap the nodes in stack.
