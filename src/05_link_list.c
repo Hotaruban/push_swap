@@ -6,13 +6,13 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:44:21 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/10 18:22:09 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/14 00:06:29 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int		lst_size(t_stack *stack)
+int	lst_size(t_stack *stack)
 {
 	int		len;
 

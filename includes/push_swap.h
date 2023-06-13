@@ -6,19 +6,19 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 01:02:09 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/11 02:56:12 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/14 00:07:27 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "../libft/includes/libft.h"
-#include <limits.h>
+# include "../libft/includes/libft.h"
+# include <limits.h>
 
-#include <stdio.h> /// to remove after all test
+# include <stdio.h> /// to remove after all test
 
-typedef struct	s_stack
+typedef struct s_stack
 {
 	int				num;
 	int				ind;
