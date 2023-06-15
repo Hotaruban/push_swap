@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 18:20:26 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/16 03:11:39 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/16 03:42:22 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,11 @@ void	set_index(t_stack *stack, int len)
 		i++;
 		ptr_index = head;
 	}
+}
+
+void	set_data(t_stack **stack_a, t_stack **stack_b)
+{
+	set_position(*stack_a);
+	set_position(*stack_b);
+	set_target_position(*stack_a, *stack_b);
 }

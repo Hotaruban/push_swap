@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 17:01:35 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/16 02:07:44 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/16 03:28:55 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ static int	check_sorted(t_stack *stack)
 	t_stack	*tmp;
 
 	tmp = stack;
-	printf("GO HERE \n");
 	while (tmp->next)
 	{
 		if (tmp->ind > tmp->next->ind)
