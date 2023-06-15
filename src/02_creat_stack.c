@@ -6,17 +6,17 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 22:23:38 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/13 23:31:50 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/16 01:44:16 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int	check_sorted(t_stack *stack_a)
+static int	check_sorted(t_stack *stack)
 {
 	t_stack	*tmp;
 
-	tmp = stack_a;
+	tmp = stack;
 	while (tmp->next)
 	{
 		if (tmp->num > tmp->next->num)
@@ -31,7 +31,6 @@ static void	check_double(char **array, t_stack *stack)
 	t_stack	*tmp;
 	t_stack	*tmp2;
 
-	(void)array;
 	tmp = stack;
 	while (tmp != NULL)
 	{
@@ -44,6 +43,7 @@ static void	check_double(char **array, t_stack *stack)
 		}
 		tmp = tmp->next;
 	}
+	(void)array;
 }
 
 static t_stack	*fill_data_stack(char **array, t_stack *stack)
@@ -89,6 +89,7 @@ t_stack	*creat_stack(char **tab)
 	free_2d_array(tab);
 	if (check_sorted(stack) == 1)
 	{
+		printf("GO HERE\n");
 		lstclear(&stack);
 		exit(0);
 	}

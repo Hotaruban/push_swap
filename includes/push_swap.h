@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 01:02:09 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/14 00:07:27 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/16 02:59:38 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_stack
 	int				num;
 	int				ind;
 	int				pos;
+	int				target;
 	struct s_stack	*next;
 }				t_stack;
 
@@ -46,19 +47,21 @@ t_stack	*creat_stack(char **tab);
 void	lstadd_back(t_stack **lst, t_stack *new);
 t_stack	*lstnew(int num);
 int		lst_size(t_stack *stack);
-void	set_index(t_stack *stack, int len);
 
 /*
 Function will sort the list
 */
-void	sort_small(t_stack *stack_a, t_stack *stack_b, int len);
-
+void	sort_small(t_stack **stack_a, int len);
+void	sort_big(t_stack **stack_a, t_stack **stack_b, int len);
+void	set_index(t_stack *stack, int len);
+void	set_position(t_stack *stack);
+void	set_target_position(t_stack *stack_a, t_stack *stack_b);
 /*
 Functions/actions for swap the nodes in stack.
 */
-void	action_sa_sb(t_stack *stack);
-void	actions_ra_rb(t_stack *stack);
-void	actions_rra_rrb(t_stack *stack);
-void	actions_pa_pb(t_stack *s_start, t_stack *s_end);
+void	action_sa_sb(t_stack **stack);
+void	actions_ra_rb(t_stack **stack);
+void	actions_rra_rrb(t_stack **stack);
+void	actions_pa_pb(t_stack **s_start, t_stack **s_end);
 
 #endif
