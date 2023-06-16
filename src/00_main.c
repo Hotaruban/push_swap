@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 18:19:33 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/16 23:59:45 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/17 04:46:53 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	main(int ac, char **av)
 	else
 		sort_big(&stack_a, &stack_b, len_list);
 	lstclear(&stack_a);
-	lstclear(&stack_b);
 	return (0);
 }
 

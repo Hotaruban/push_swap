@@ -6,7 +6,7 @@
 #    By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/05 01:19:33 by jhurpy            #+#    #+#              #
-#    Updated: 2023/06/07 17:36:32 by jhurpy           ###   ########.fr        #
+#    Updated: 2023/06/17 03:03:44 by jhurpy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ AR = ar rc
 # Target library name and directories
 NAME = libft.a
 SRC_DIR = src
-SRC_FILES = ft_atoi.c \
+SRC_FILES = ft_absolut.c \
+		ft_atoi.c \
 		ft_atol.c \
 		ft_bzero.c \
 		ft_calloc.c \
