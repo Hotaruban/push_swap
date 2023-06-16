@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 00:36:11 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/16 03:49:28 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/16 23:56:19 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ static void	push_b(t_stack **stack_a, t_stack **stack_b, int len)
 		ft_putstr_fd("pb\n", 1);
 		if (lst_size(*stack_b) > 1)
 		{
-			if ((*stack_b)->ind <= (len / 2))
+			if ((*stack_b)->ind <= (len / 2)
+				&& (*stack_b)->next->ind >= (len / 2))
 			{
 				actions_ra_rb(stack_b);
 				ft_putstr_fd("rb\n", 1);
@@ -39,7 +40,5 @@ static void	push_b(t_stack **stack_a, t_stack **stack_b, int len)
 void	sort_big(t_stack **stack_a, t_stack **stack_b, int len)
 {
 	push_b(stack_a, stack_b, len);
-	printf("WE ARE HERE\n");
 	push_a(stack_a, stack_b, len);
-	printf("WE ARE HERE TOO\n");
 }

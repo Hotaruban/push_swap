@@ -6,30 +6,37 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 18:20:26 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/16 03:42:22 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/16 23:54:38 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	set_target_position(t_stack *stack_a, t_stack *stack_b)
+void	set_target_position(t_stack *stack_a, t_stack *stack_b, int len)
 {
 	t_stack	*tmp_a;
 	int		i;
+	int		tmp;
 
 	tmp_a = stack_a;
-	while (stack_b)
+	tmp = len;
+	while(stack_b)
 	{
 		i = 0;
-		stack_a = tmp_a;
 		while (stack_a)
 		{
-			if (stack_a->ind == (stack_b->pos + 1))
+			if ((stack_a->ind - stack_b->ind) > 0
+				&& tmp > (stack_a->ind - stack_b->ind))
+			{
+				tmp = stack_a->ind - stack_b->ind;
 				stack_b->target = i;
+			}
 			stack_a = stack_a->next;
 			i++;
 		}
+		stack_a = tmp_a;
 		stack_b = stack_b->next;
+		tmp = len;
 	}
 }
 
@@ -76,9 +83,9 @@ void	set_index(t_stack *stack, int len)
 	}
 }
 
-void	set_data(t_stack **stack_a, t_stack **stack_b)
+void	set_data(t_stack **stack_a, t_stack **stack_b, int len)
 {
 	set_position(*stack_a);
 	set_position(*stack_b);
-	set_target_position(*stack_a, *stack_b);
+	set_target_position(*stack_a, *stack_b, len);
 }

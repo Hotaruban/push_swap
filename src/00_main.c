@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 18:19:33 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/16 03:48:45 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/16 21:58:48 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,21 @@ int	main(int ac, char **av)
 	while (stack_a)
 	{
 		//printf("-- num_a %d -- \n", stack_a->num);
-		printf("-- ind %d pos %d target %d-- \n",
-			stack_a->ind, stack_a->pos, stack_a->target);
+		printf("-- ind %d	pos %d	target %d -- \n", stack_a->ind, stack_a->pos, stack_a->target);
 		stack_a = stack_a->next;
 	}
 	printf("List _b_\n");
 	while (stack_b)
 	{
 		//printf("-- num_b %d -- \n", stack_b->num);
-		printf("-- ind %d pos %d target %d-- \n",
+		printf("-- ind %d	pos %d	target %d -- \n",
 			stack_b->ind, stack_b->pos, stack_b->target);
 		stack_b = stack_b->next;
 	}
 	// END OF REMOVE
 
 	lstclear(&stack_a);
+	lstclear(&stack_b);
 	return (0);
 }
 

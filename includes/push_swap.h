@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 01:02:09 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/16 03:46:58 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/16 23:50:58 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ Function will sort the list
 void	sort_small(t_stack **stack_a, int len);
 void	sort_big(t_stack **stack_a, t_stack **stack_b, int len);
 void	push_a(t_stack **stack_a, t_stack **stack_b, int len);
-void	set_data(t_stack **stack_a, t_stack **stack_b);
+void	set_data(t_stack **stack_a, t_stack **stack_b, int len);
 void	set_index(t_stack *stack, int len);
 void	set_position(t_stack *stack);
-void	set_target_position(t_stack *stack_a, t_stack *stack_b);
+void	set_target_position(t_stack *stack_a, t_stack *stack_b, int len);
 /*
 Functions/actions for swap the nodes in stack.
 */
