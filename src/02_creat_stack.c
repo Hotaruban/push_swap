@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 22:23:38 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/16 01:44:16 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/17 17:17:54 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ t_stack	*creat_stack(char **tab)
 	free_2d_array(tab);
 	if (check_sorted(stack) == 1)
 	{
-		printf("GO HERE\n");
 		lstclear(&stack);
 		exit(0);
 	}
