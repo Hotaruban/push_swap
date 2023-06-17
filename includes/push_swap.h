@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 01:02:09 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/18 00:30:34 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/18 01:40:15 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ Function will sort the list
 */
 void	sort_small(t_stack **stack_a, int len);
 void	sort_big(t_stack **stack_a, t_stack **stack_b, int len);
-void	move_cheap(t_stack **stack_a, t_stack **stack_b, int len);
 void	sort_stack(t_stack **s_a, t_stack **s_b, int act_a, int act_b);
 
 /*
