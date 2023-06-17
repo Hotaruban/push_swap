@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 00:36:11 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/17 23:54:26 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/18 00:32:33 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static void	push_a(t_stack **stack_a, t_stack **stack_b, int len)
 		set_data(stack_a, stack_b, len);
 		move_cheap(stack_a, stack_b, len);
 	}
-	set_data(stack_a, stack_b, len);
 }
 
 void	sort_big(t_stack **stack_a, t_stack **stack_b, int len)

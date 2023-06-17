@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 01:02:09 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/17 23:59:47 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/18 00:30:34 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "../libft/includes/libft.h"
 # include <limits.h>
+# include <stdlib.h>
+# include <unistd.h>
 # include <stdio.h>
 
 typedef struct s_stack

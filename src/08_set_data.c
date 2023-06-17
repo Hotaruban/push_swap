@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 18:20:26 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/17 23:59:19 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/18 00:31:03 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	get_target(t_stack **stack_a, int b_ind, int t_ind, int target_pos)
 		}
 		tmp_a = tmp_a->next;
 	}
-	if (target_pos != t_ind)
+	if (target_pos != INT_MAX)
 		return (target_pos);
 	tmp_a = (*stack_a);
 	while (tmp_a)
