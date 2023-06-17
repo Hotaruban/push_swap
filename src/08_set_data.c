@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 18:20:26 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/18 00:31:03 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/18 00:53:21 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static void	set_target_position(t_stack **stack_a, t_stack **stack_b, int len)
 	int		target_pos;
 
 	tmp = *stack_b;
-	target_pos = 0;
+	target_pos = INT_MAX;
 	while (tmp)
 	{
 		target_pos = get_target(stack_a, tmp->ind, len, target_pos);
