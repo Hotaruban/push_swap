@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_error_exit.c                                    :+:      :+:    :+:   */
+/*   11_pa_pb.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 22:31:56 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/17 05:01:44 by jhurpy           ###   ########.fr       */
+/*   Created: 2023/06/17 18:43:05 by jhurpy            #+#    #+#             */
+/*   Updated: 2023/06/17 20:58:00 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	error_malloc(char *array)
+static void	actions_pa_pb(t_stack **s_start, t_stack **s_end)
 {
-	free(array);
-	ft_putstr_fd("Error\n", 2);
-	exit(1);
+	t_stack	*tmp;
+
+	tmp = (*s_start)->next;
+	(*s_start)->next = *s_end;
+	*s_end = *s_start;
+	*s_start = tmp;
 }
 
-void	error_digit(char **array)
+void	do_pa(t_stack **stack_b, t_stack **stack_a)
 {
-	free_2d_array(array);
-	ft_putstr_fd("Error\n", 2);
-	exit(1);
+	actions_pa_pb(stack_b, stack_a);
+	ft_putstr_fd("pa\n", 1);
 }
 
-void	error_integers(char **array, t_stack *stack)
+void	do_pb(t_stack **stack_a, t_stack **stack_b)
 {
-	free_2d_array(array);
-	free_stack(stack);
-	ft_putstr_fd("Error\n", 2);
-	exit(1);
-}
-
-void	error_double(char **array, t_stack *stack)
-{
-	free_2d_array(array);
-	free_stack(stack);
-	ft_putstr_fd("Error\n", 2);
-	exit(1);
+	actions_pa_pb(stack_a, stack_b);
+	ft_putstr_fd("pb\n", 1);
 }

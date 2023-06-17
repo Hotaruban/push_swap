@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 01:02:09 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/17 04:12:57 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/17 23:59:47 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 # include "../libft/includes/libft.h"
 # include <limits.h>
-
-# include <stdio.h> /// to remove after all test
+# include <stdio.h>
 
 typedef struct s_stack
 {
@@ -26,7 +25,6 @@ typedef struct s_stack
 	int				target;
 	int				act_a;
 	int				act_b;
-	int				nb_act;
 	struct s_stack	*next;
 }				t_stack;
 
@@ -48,26 +46,33 @@ int		main(int ac, char **av);
 char	**join_split(int ac, char **av);
 t_stack	*creat_stack(char **tab);
 void	lstadd_back(t_stack **lst, t_stack *new);
-t_stack	*lstnew(int num);
 int		lst_size(t_stack *stack);
+t_stack	*lstnew(int num);
 
 /*
 Function will sort the list
 */
 void	sort_small(t_stack **stack_a, int len);
 void	sort_big(t_stack **stack_a, t_stack **stack_b, int len);
-void	push_a(t_stack **stack_a, t_stack **stack_b, int len);
-void	sort_stack(t_stack **stack_a, t_stack **stack_b, int cheapest);
-void	set_data(t_stack **stack_a, t_stack **stack_b, int len);
-void	set_index(t_stack *stack, int len);
-void	set_position(t_stack *stack);
-void	set_target_position(t_stack *stack_a, t_stack *stack_b, int len);
+void	move_cheap(t_stack **stack_a, t_stack **stack_b, int len);
+void	sort_stack(t_stack **s_a, t_stack **s_b, int act_a, int act_b);
+
 /*
 Functions/actions for swap the nodes in stack.
 */
-void	action_sa_sb(t_stack **stack);
-void	actions_ra_rb(t_stack **stack);
-void	actions_rra_rrb(t_stack **stack);
-void	actions_pa_pb(t_stack **s_start, t_stack **s_end);
+void	do_ra(t_stack **stack);
+void	do_rb(t_stack **stack);
+void	do_rr(t_stack **stack_a, t_stack **stack_b);
+void	do_rra(t_stack **stack);
+void	do_rrb(t_stack **stack);
+void	do_rrr(t_stack **stack_a, t_stack **stack_b);
+void	do_pa(t_stack **stack_b, t_stack **stack_a);
+void	do_pb(t_stack **stack_a, t_stack **stack_b);
+
+/*
+Function utils
+*/
+int		check_sorted(t_stack *stack);
+void	set_data(t_stack **stack_a, t_stack **stack_b, int len);
 
 #endif

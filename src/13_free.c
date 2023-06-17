@@ -1,16 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_free.c                                          :+:      :+:    :+:   */
+/*   13_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 22:34:07 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/17 17:17:42 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/17 23:59:29 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+/*
+List of function to free the memory.
+*/
 
 void	free_2d_array(char **array)
 {
@@ -49,5 +53,4 @@ void	lstclear(t_stack **lst)
 		temp = node;
 	}
 	*lst = NULL;
-
 }

@@ -6,7 +6,7 @@
 #    By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/28 01:00:03 by jhurpy            #+#    #+#              #
-#    Updated: 2023/06/17 04:07:07 by jhurpy           ###   ########.fr        #
+#    Updated: 2023/06/17 22:51:58 by jhurpy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,15 +26,18 @@ SRC_DIR =src
 SRC_FILES =	00_main.c \
 			01_join_split.c \
 			02_creat_stack.c \
-			03_error_exit.c \
-			04_free.c \
-			05_link_list.c \
-			06_actions.c \
-			07_sort_small.c \
+			03_link_list.c \
+			04_sort_small.c \
+			05_sort_big.c \
+			06_move_cheap.c \
+			07_sort_stack.c \
 			08_set_data.c \
-			09_sort_big.c \
-			10_push_a.c \
-			11_sort_stack.c \
+			09_ra_rb_rr.c \
+			10_rra_rrb_rrr.c \
+			11_pa_pb.c \
+			12_error_exit.c \
+			13_free.c \
+			14_utils.c \
 
 OBJ_DIR = obj
 INC_DIR = includes

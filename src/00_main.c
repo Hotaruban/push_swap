@@ -6,11 +6,16 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 18:19:33 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/17 17:51:14 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/17 23:55:36 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+/*
+The set_index function, set an index to every numbers to make the manipulation
+easier.
+*/
 
 static void	set_index(t_stack *stack, int len)
 {
@@ -47,13 +52,13 @@ int	main(int ac, char **av)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	stack_b = NULL;
 	if (ac < 2 || (ac == 2 && !av[1][0]))
 		return (0);
 	split = join_split(ac, av);
 	stack_a = creat_stack(split);
 	len_list = lst_size(stack_a);
 	set_index(stack_a, len_list);
+	stack_b = NULL;
 	if (len_list <= 3)
 		sort_small(&stack_a, len_list);
 	else

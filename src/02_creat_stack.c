@@ -6,25 +6,11 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 22:23:38 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/17 17:17:54 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/17 20:51:51 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-static int	check_sorted(t_stack *stack)
-{
-	t_stack	*tmp;
-
-	tmp = stack;
-	while (tmp->next)
-	{
-		if (tmp->num > tmp->next->num)
-			return (0);
-		tmp = tmp->next;
-	}
-	return (1);
-}
 
 static void	check_double(char **array, t_stack *stack)
 {

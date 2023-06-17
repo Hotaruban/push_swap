@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   09_sort_big.c                                      :+:      :+:    :+:   */
+/*   05_sort_big.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 00:36:11 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/17 04:05:13 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/17 23:54:26 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,26 @@ static void	push_b(t_stack **stack_a, t_stack **stack_b, int len)
 	while (lst_size(*stack_a) > 3)
 	{
 		while ((*stack_a)->ind > (len - 3))
-		{
-			actions_ra_rb(stack_a);
-			ft_putstr_fd("ra\n", 1);
-		}
-		actions_pa_pb(stack_a, stack_b);
-		ft_putstr_fd("pb\n", 1);
+			do_ra(stack_a);
+		do_pb(stack_a, stack_b);
 		if (lst_size(*stack_b) > 1)
 		{
 			if ((*stack_b)->ind <= (len / 2)
 				&& (*stack_b)->next->ind >= (len / 2))
-			{
-				actions_ra_rb(stack_b);
-				ft_putstr_fd("rb\n", 1);
-			}
+				do_rb(stack_b);
 		}
 	}
 	sort_small(stack_a, 3);
+	set_data(stack_a, stack_b, len);
+}
+
+static void	push_a(t_stack **stack_a, t_stack **stack_b, int len)
+{
+	while (lst_size(*stack_a) < len)
+	{
+		set_data(stack_a, stack_b, len);
+		move_cheap(stack_a, stack_b, len);
+	}
 	set_data(stack_a, stack_b, len);
 }
 
@@ -41,4 +44,6 @@ void	sort_big(t_stack **stack_a, t_stack **stack_b, int len)
 {
 	push_b(stack_a, stack_b, len);
 	push_a(stack_a, stack_b, len);
+	while (check_sorted(*stack_a) == 0)
+		do_rra(stack_a);
 }

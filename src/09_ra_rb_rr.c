@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   06_actions.c                                       :+:      :+:    :+:   */
+/*   16_ra_rb_rr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/10 00:34:18 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/17 17:38:31 by jhurpy           ###   ########.fr       */
+/*   Created: 2023/06/17 18:42:45 by jhurpy            #+#    #+#             */
+/*   Updated: 2023/06/17 18:47:06 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/*
-The different functions/actions used to swap the nodes in the stack.
-*/
-
-void	action_sa_sb(t_stack **stack)
-{
-	t_stack	*tmp;
-
-	tmp = (*stack)->next;
-	(*stack)->next = tmp->next;
-	tmp->next = *stack;
-	*stack = tmp;
-}
-
-void	actions_ra_rb(t_stack **stack)
+static void	actions_ra_rb(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack	*tmp_head;
@@ -40,27 +26,21 @@ void	actions_ra_rb(t_stack **stack)
 	*stack = tmp;
 }
 
-void	actions_rra_rrb(t_stack **stack)
+void	do_ra(t_stack **stack)
 {
-	t_stack	*tmp;
-	t_stack	*tmp_end;
-
-	tmp = *stack;
-	while ((*stack)->next != NULL)
-	{
-		tmp_end = *stack;
-		*stack = (*stack)->next;
-	}
-	(*stack)->next = tmp;
-	tmp_end->next = NULL;
+	actions_ra_rb(stack);
+	ft_putstr_fd("ra\n", 1);
 }
 
-void	actions_pa_pb(t_stack **s_start, t_stack **s_end)
+void	do_rb(t_stack **stack)
 {
-	t_stack	*tmp;
+	actions_ra_rb(stack);
+	ft_putstr_fd("rb\n", 1);
+}
 
-	tmp = (*s_start)->next;
-	(*s_start)->next = *s_end;
-	*s_end = *s_start;
-	*s_start = tmp;
+void	do_rr(t_stack **stack_a, t_stack **stack_b)
+{
+	actions_ra_rb(stack_a);
+	actions_ra_rb(stack_b);
+	ft_putstr_fd("rr\n", 1);
 }
