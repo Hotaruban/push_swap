@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 01:02:09 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/18 01:40:15 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/18 18:36:50 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 typedef struct s_stack
 {
-	int				num;
+	long			num;
 	int				ind;
 	int				pos;
 	int				target;
