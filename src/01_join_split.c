@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 22:03:59 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/09 01:34:12 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/18 19:14:13 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ static int	check_split(char **str)
 	while (str[++j])
 	{
 		i = 0;
+		if (ft_strlen(str[j]) > 11)
+			return (1);
 		if (str[j][i] == '-' || str[j][i] == '+')
 			i++;
 		if (!ft_isdigit(str[j][i]))
