@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 22:23:38 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/17 20:51:51 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/21 17:10:16 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,13 @@ static t_stack	*fill_data_stack(char **array, t_stack *stack)
 	long	tmp;
 
 	i = 0;
-	tmp = ft_atol(array[i]);
-	if (tmp > INT_MAX || tmp < INT_MIN)
-		error_integers(array, stack);
-	stack->num = tmp;
-	i++;
 	while (array[i])
 	{
 		tmp = ft_atol(array[i]);
 		if (tmp > INT_MAX || tmp < INT_MIN)
 			error_integers(array, stack);
 		lstadd_back(&stack, lstnew(tmp));
-		if (stack->next == NULL)
+		if (stack == NULL)
 		{
 			free_2d_array(array);
 			lstclear(&stack);
@@ -64,12 +59,7 @@ t_stack	*creat_stack(char **tab)
 {
 	t_stack	*stack;
 
-	stack = (t_stack *)malloc(sizeof(t_stack));
-	if (stack == NULL)
-	{
-		free_2d_array(tab);
-		error_malloc(NULL);
-	}
+	stack = NULL;
 	stack = fill_data_stack(tab, stack);
 	check_double(tab, stack);
 	free_2d_array(tab);
