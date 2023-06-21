@@ -6,7 +6,7 @@
 #    By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/28 01:00:03 by jhurpy            #+#    #+#              #
-#    Updated: 2023/06/22 00:19:26 by jhurpy           ###   ########.fr        #
+#    Updated: 2023/06/22 02:09:04 by jhurpy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ LIBFT_DIR = ./libft
 INCS = -I$(INC_DIR) -I$(LIBFT_DIR)
 
 # Sources, objects and dependencies
-SOURCES = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+SOURCES = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJECTS = $(SOURCES:$(SRC_DIR)%.c=$(OBJ_DIR)/%.o)
 
 # Default target, build the library
