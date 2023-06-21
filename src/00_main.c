@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 18:19:33 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/22 00:23:07 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/22 00:41:50 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,23 +74,26 @@ static void	empty_string(int ac, char **av)
 
 static int	check_digit(int ac, char **av)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
+	size_t	space;
 
 	i = 0;
 	j = 0;
-	while (ac > ++j)
+	space = 0;
+	while (ac > ++i)
 	{
-		i = 0;
-		if (av[j][i] == '-' || av[j][i] == '+')
-			i++;
-		if (!ft_isdigit(av[j][i]))
-			return (1);
-		while (av[j][i])
+		while (!ft_isspace(av[i][j]))
 		{
-			if (!ft_isdigit(av[j][i++]))
-				return (1);
+			space++;
+			j++;
 		}
+		if (ft_strlen(av[i]) != space)
+		{
+			ft_putstr_fd("Error\n", 2);
+			exit (0);
+		}
+		i++;
 	}
 	return (0);
 }
