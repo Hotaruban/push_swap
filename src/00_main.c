@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 18:19:33 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/22 00:41:50 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/22 01:13:00 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,30 +72,30 @@ static void	empty_string(int ac, char **av)
 		return ;
 }
 
-static int	check_digit(int ac, char **av)
+static void	check_digit(int ac, char **av)
 {
 	int		i;
 	int		j;
-	size_t	space;
+	int		space;
 
 	i = 0;
 	j = 0;
 	space = 0;
 	while (ac > ++i)
 	{
-		while (!ft_isspace(av[i][j]))
+		while (ft_isspace(av[i][j]) && av[i][j])
 		{
 			space++;
 			j++;
-		}
-		if (ft_strlen(av[i]) != space)
-		{
-			ft_putstr_fd("Error\n", 2);
-			exit (0);
+			if (av[i][j] == '\0' && j == space)
+			{
+				ft_putstr_fd("Error\n", 2);
+				exit (0);
+			}
 		}
 		i++;
 	}
-	return (0);
+	return ;
 }
 
 int	main(int ac, char **av)
@@ -108,11 +108,7 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (0);
 	empty_string(ac, av);
-	if (check_digit(ac, av) == 1)
-	{
-		ft_putstr_fd("Error\n", 2);
-		exit (0);
-	}
+	check_digit(ac, av);
 	split = join_split(ac, av);
 	stack_a = creat_stack(split);
 	len_list = lst_size(stack_a);
