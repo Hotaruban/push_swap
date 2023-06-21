@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 18:19:33 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/21 18:44:25 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/22 00:23:07 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,21 +45,70 @@ static void	set_index(t_stack *stack, int len)
 	}
 }
 
+static void	empty_string(int ac, char **av)
+{
+	int	i;
+	int	count;
+	int	error;
+
+	i = 0;
+	count = 0;
+	error = 0;
+	while (ac > ++i)
+	{
+		if (ft_strlen(av[i]) == 0)
+			error++;
+		else
+			count++;
+	}
+	if (error > 0 && count > 0)
+	{
+		ft_putstr_fd("Error\n", 2);
+		exit (0);
+	}
+	else if (error > 0 && count == 0)
+		exit (0);
+	else
+		return ;
+}
+
+static int	check_digit(int ac, char **av)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (ac > ++j)
+	{
+		i = 0;
+		if (av[j][i] == '-' || av[j][i] == '+')
+			i++;
+		if (!ft_isdigit(av[j][i]))
+			return (1);
+		while (av[j][i])
+		{
+			if (!ft_isdigit(av[j][i++]))
+				return (1);
+		}
+	}
+	return (0);
+}
+
 int	main(int ac, char **av)
 {
 	char	**split;
 	int		len_list;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	int		i;
 
 	if (ac < 2)
 		return (0);
-	i = 0;
-	while (ac > ++i)
+	empty_string(ac, av);
+	if (check_digit(ac, av) == 1)
 	{
-		if (ft_strlen(av[i]) == 0)
-		 return (0);
+		ft_putstr_fd("Error\n", 2);
+		exit (0);
 	}
 	split = join_split(ac, av);
 	stack_a = creat_stack(split);

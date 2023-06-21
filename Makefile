@@ -6,7 +6,7 @@
 #    By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/28 01:00:03 by jhurpy            #+#    #+#              #
-#    Updated: 2023/06/21 17:15:22 by jhurpy           ###   ########.fr        #
+#    Updated: 2023/06/22 00:19:26 by jhurpy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ AR = ar rc
 # Target library name and directories
 NAME = push_swap
 LIBFT = ./libft/libft.a
-SRC_DIR =src
+SRC_DIR = src
 SRC_FILES =	00_main.c \
 			01_join_split.c \
 			02_creat_stack.c \
