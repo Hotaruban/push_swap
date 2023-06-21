@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 18:19:33 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/18 00:53:07 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/21 18:44:25 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,16 @@ int	main(int ac, char **av)
 	int		len_list;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	int		i;
 
-	if (ac < 2 || (ac == 2 && !av[1][0]))
+	if (ac < 2)
 		return (0);
+	i = 0;
+	while (ac > ++i)
+	{
+		if (ft_strlen(av[i]) == 0)
+		 return (0);
+	}
 	split = join_split(ac, av);
 	stack_a = creat_stack(split);
 	len_list = lst_size(stack_a);
