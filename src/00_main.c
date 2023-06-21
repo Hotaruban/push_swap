@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 18:19:33 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/06/22 01:13:00 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/06/22 01:33:00 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void	empty_string(int ac, char **av)
 		else
 			count++;
 	}
-	if (error > 0 && count > 0)
+	if ((error > 0 && count > 0) || (ac >= 2 && error > 0))
 	{
 		ft_putstr_fd("Error\n", 2);
 		exit (0);
