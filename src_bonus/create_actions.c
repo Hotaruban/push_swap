@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 22:15:51 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/09/28 14:41:45 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/09/28 22:01:04 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int	create_actions(t_actions *actions)
 		line = get_next_line(0);
 		new = new->next;
 	}
+	free(line);
 	new->next = NULL;
 	return (0);
 }

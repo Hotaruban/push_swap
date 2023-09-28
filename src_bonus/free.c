@@ -6,11 +6,11 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 22:34:07 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/09/28 20:39:05 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/09/28 21:53:09 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker.h"
 
 /*
 List of function to free the memory.

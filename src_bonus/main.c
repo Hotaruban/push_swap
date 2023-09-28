@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:38:49 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/09/28 20:35:40 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/09/28 22:03:42 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ int	main(int ac, char **av)
 		free_list_actions(actions);
 		return (0);
 	}
+	ft_putendl_fd("Actions:", 2);
+	ft_putendl_fd(actions->action, 2);
 	sorting(stack_a, stack_b, actions);
 	if (check_sorted_bonus(stack_a) == 1)
 		ft_putstr_fd("OK\n", 1);

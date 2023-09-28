@@ -6,7 +6,7 @@
 /*   By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 23:02:53 by jhurpy            #+#    #+#             */
-/*   Updated: 2023/09/28 14:42:02 by jhurpy           ###   ########.fr       */
+/*   Updated: 2023/09/28 21:50:56 by jhurpy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,7 @@ void	sorting(t_stack *stack_a, t_stack *stack_b, t_actions *actions)
 		else if (ft_strncmp(tmp->action, "ss", 3)
 			|| ft_strncmp(tmp->action, "rr", 3)
 			|| ft_strncmp(tmp->action, "rrr", 4))
-		{
 			do_stack_ab(stack_a, stack_b, actions);
-		}
 		tmp = tmp->next;
 	}
 }
