@@ -6,13 +6,13 @@
 #    By: jhurpy <jhurpy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/28 01:00:03 by jhurpy            #+#    #+#              #
-#    Updated: 2023/06/22 02:09:04 by jhurpy           ###   ########.fr        #
+#    Updated: 2023/09/28 20:43:45 by jhurpy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Compiler and flags
-CC = gcc
-C_FLAGS = -Wall -Wextra -Werror -g
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -g -I includes
 #S_FLAGS = -g -fsanitize=address,undefined,leak
 
 # Commands
@@ -44,8 +44,25 @@ LIBFT_DIR = ./libft
 INCS = -I$(INC_DIR) -I$(LIBFT_DIR)
 
 # Sources, objects and dependencies
-SOURCES = $(addprefix $(SRC_DIR), $(SRC_FILES))
-OBJECTS = $(SOURCES:$(SRC_DIR)%.c=$(OBJ_DIR)/%.o)
+SOURCES = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+OBJECTS = $(SOURCES:%.c=%.o)
+
+NAME_BONUS = checker
+SRC_DIR_BONUS = src_bonus
+SRC_FILES_BONUS =	main.c \
+					actions.c \
+					check_action.c \
+					create_actions.c \
+					sorting.c \
+					check_sorting.c \
+					create_stack.c \
+					errors_exit.c \
+					free.c \
+					join_split.c \
+					link_list.c \
+
+SOURCES_BONUS = $(addprefix $(SRC_DIR_BONUS)/, $(SRC_FILES_BONUS))
+OBJECTS_BONUS = $(SOURCES_BONUS:%.c=%.o)
 
 # Default target, build the library
 all: $(LIBFT_DIR) $(NAME)
@@ -54,23 +71,27 @@ all: $(LIBFT_DIR) $(NAME)
 $(LIBFT):
 	make -C $(LIBFT_DIR)
 
-# Object file build rule
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	mkdir -p $(dir $@)
-	$(CC) $(C_FLAGS) -c $< -o $@
-
 # Target library build rule
 $(NAME): $(OBJECTS) $(LIBFT)
-	$(CC) $(C_FLAGS) $^ $(INCS) -o $(NAME)
+	$(CC) $(CFLAGS) $^ $(INCS) -o $(NAME)
+
+#bonus: all $(OBJECTS_BONUS) $(NAME_BONUS)
+#	$(CC) $(C_FLAGS) $< $(INCS) -o $(NAME_BONUS)
+
+bonus: all $(OBJECTS_BONUS) $(NAME_BONUS)
+
+$(NAME_BONUS): $(OBJECTS_BONUS) $(LIBFT)
+	$(CC) $(CFLAGS) $^ $(INCS) -o $@
 
 # Clean object files
 clean:
-	$(RM) $(OBJ_DIR)
+	$(RM) ./src/*.o ./src_bonus/*.o
 	make clean -C $(LIBFT_DIR)
 
 # Clean object files and target library
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) $(NAME_BONUS)
 	$(RM) $(LIBFT_DIR)/libft.a
 	make fclean -C $(LIBFT_DIR)
 
@@ -81,6 +102,8 @@ re: fclean all
 norm:
 	@norminette -R CheckForbiddenSourceHeader $(SRC_DIR)/*.c ;
 	@norminette -R CheckDefine $(INC_DIR)/*.h ;
+	@norminette -R CheckForbiddenSourceHeader $(SRC_DIR_BONUS)/*.c ;
+	@norminette -R CheckDefine $(SRC_DIR_BONUS)/*.h ;
 	@norminette -R CheckForbiddenSourceHeader $(LIBFT_DIR)/src/*.c ;
 	@norminette -R CheckDefine $(LIBFT_DIR)/includes/*.h
 
