@@ -1,7 +1,7 @@
 # <p align = "center">push_swap</p>
 
 <p align = "center">
-<a href = https://github.com/Hotaruban><img push_swap = "push_swap" src = "push_swape.png"></a></p>
+<a href = https://github.com/Hotaruban><img push_swap = "push_swap" src = "./doc/push_swape.png"></a></p>
 
 ### The "push_swap" project at 42 challenges participants to create an efficient sorting algorithm for a set of integers using two stacks. This project explores algorithmic design, optimization, and the manipulation of data structures, providing a unique approach to sorting.
 
